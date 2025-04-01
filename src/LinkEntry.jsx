@@ -2,13 +2,19 @@ import React, { useState } from "react";
 
 export function LinkEntry({ text, url, icon, textSize = "1.6rem" }) {
     const [copied, setCopied] = useState(false);
+    const [hovered, setHovered] = useState(false);
 
     const props = {
         style: {
+            height: "40px",
             fontSize: textSize,
             color: "#fafafa",
-            textDecoration: "none"
-        }
+            textDecoration: "none",
+            transition: "transform 0.1s ease-in-out",
+            transform: hovered ? "scale(1.1)" : "scale(1)"
+        },
+        onMouseEnter: () => setHovered(true),
+        onMouseLeave: () => setHovered(false)
     }
 
     const handleClick = (event) => {
