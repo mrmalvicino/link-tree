@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export function LinkEntry({ text, url, icon, textSize = "1.6rem" }) {
+export function LinkEntry({ text, url, icon, textSize = "1.4rem" }) {
     const [copied, setCopied] = useState(false);
     const [hovered, setHovered] = useState(false);
 
